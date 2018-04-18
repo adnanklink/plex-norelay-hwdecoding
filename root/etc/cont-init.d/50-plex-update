@@ -112,4 +112,6 @@ exit 0
 else
 dpkg -i --force-confold /tmp/plexmediaserver_"${REMOTE_VERSION}"_amd64.deb
 rm -f /tmp/plexmediaserver_*.deb
+# remove plex relay after install
+rm -f /usr/lib/plexmediaserver/Plex\ Relay
 fi

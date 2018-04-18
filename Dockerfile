@@ -37,7 +37,9 @@ RUN \
 	/etc/default/plexmediaserver \
 	/tmp/* \
 	/var/lib/apt/lists/* \
-	/var/tmp/*
+	/var/tmp/* \
+# remove plex relay after install
+    /usr/lib/plexmediaserver/Plex\ Relay
 
 # add local files
 COPY root/ /
