@@ -1,6 +1,4 @@
-FROM linuxserver/plex
-
-MAINTAINER edifus <edifus@gmail.com>
+FROM plexinc/pms-docker
 
 # add script to remove plex relay
 COPY root/ /
