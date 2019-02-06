@@ -1,6 +1,13 @@
 #!/bin/sh
 
-if [ -e "/usr/lib/plexmediaserver/Plex\ Transcoder2" ]; then
+# Current Transcoder location
+FILENAME="/usr/lib/plexmediaserver/Plex\ Transcoder"
+# Size to distinguish between patch and Transcoder
+MAXSIZE=200000
+# Get size of file
+FILESIZE=$(stat -c%s "$FILENAME")
+
+if (( FILESIZE < MAXSIZE )); then
   echo "Already nvdec patched!"
 else
   mv "/usr/lib/plexmediaserver/Plex\ Transcoder" "/usr/lib/plexmediaserver/Plex\ Transcoder2"
