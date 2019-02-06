@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -e "/usr/lib/plexmediaserver/Plex\ Transcoder2" ]; then
+  echo "Already nvdec patched!"
+else
+  mv "/usr/lib/plexmediaserver/Plex\ Transcoder" "/usr/lib/plexmediaserver/Plex\ Transcoder2"
+  echo "#!/bin/sh" > "/usr/lib/plexmediaserver/Plex\ Transcoder"
+  echo "/usr/lib/plexmediaserver/Plex\ Transcoder2 -hwaccel nvdec \"$@\"" >> "/usr/lib/plexmediaserver/Plex\ Transcoder"
+  chmod u+x "/usr/lib/plexmediaserver/Plex\ Transcoder"
+fi
