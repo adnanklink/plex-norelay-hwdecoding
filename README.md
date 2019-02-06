@@ -1,5 +1,6 @@
 # plex-norelay
 
-Based on linuxserver.io Plex container with 'Plex Relay' binary removed
+Based on plexinc Plex container with 'Plex Relay' binary removed
+Experimental support for hardware decoding added.
 
 [Instructions](https://hub.docker.com/r/linuxserver/plex/)
