@@ -1,8 +1,16 @@
-FROM plexinc/pms-docker
+# arg
+ARG TAG
+
+# image
+FROM plexinc/pms-docker:${TAG:-latest}
 
 # env
 ENV NVIDIA_DRIVER_CAPABILITIES="compute,video,utility"
 ENV NVIDIA_VISIBLE_DEVICES="all"
+
+# output
+RUN \
+  echo "** TAG: ${TAG} **"
 
 # add script to remove plex relay
 COPY root/ /
