@@ -1,7 +1,7 @@
 # arg
-ARG BRANCH=
-ARG COMMIT=
-ARG TAG=
+ARG BRANCH
+ARG COMMIT
+ARG TAG
 
 # image
 FROM plexinc/pms-docker:${TAG:-latest}
