@@ -1,23 +1,24 @@
-# arg
+# image
+ARG TAG=latest
+FROM plexinc/pms-docker:${TAG}
+
+# arg (args before FROM must be declared again: https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact)
 ARG BRANCH
 ARG COMMIT
 ARG TAG
 
-# image
-FROM plexinc/pms-docker:${TAG:-latest}
-
 # env
 ENV \
-	BRANCH=${BRANCH} \
-	COMMIT=${COMMIT} \
-	TAG=${TAG} \
+	BRANCH=${BRANCH:-Unknown} \
+	COMMIT=${COMMIT:-Unknown} \
+	TAG=${TAG:-Unknown} \
 	NVIDIA_DRIVER_CAPABILITIES="compute,video,utility" \
 	NVIDIA_VISIBLE_DEVICES="all"
 	
 
 # output
 RUN \
-  echo "** BRANCH: ${BRANCH:-Unknown} - COMMIT: ${COMMIT:-Unknown} - TAG: ${TAG:-Unknown} **"
+  echo "** BRANCH: ${BRANCH} - COMMIT: ${COMMIT} - TAG: ${TAG} **"
 
 # add script to remove plex relay
 COPY root/ /
