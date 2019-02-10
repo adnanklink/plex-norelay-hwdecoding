@@ -6,4 +6,4 @@ Experimental support for hardware decoding added.
 
 [Instructions](https://hub.docker.com/r/linuxserver/plex/)
 
-## Original Author: https://github.com/adnanklink/plex-norelay-hwdecoding
+Credits to: https://github.com/adnanklink/plex-norelay-hwdecoding
