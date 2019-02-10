@@ -1,4 +1,6 @@
 # arg
+ARG BRANCH
+ARG COMMIT
 ARG TAG
 
 # image
@@ -10,7 +12,7 @@ ENV NVIDIA_VISIBLE_DEVICES="all"
 
 # output
 RUN \
-  echo "** TAG: ${TAG} **"
+  echo "** BRANCH: ${BRANCH:-Unknown} - COMMIT: ${COMMIT:-Unknown} - TAG: ${TAG:-Unknown} **"
 
 # add script to remove plex relay
 COPY root/ /
