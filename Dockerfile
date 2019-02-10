@@ -1,4 +1,4 @@
-FROM linuxserver/plex
+FROM plexinc/pms-docker
 
 # add script to remove plex relay
 COPY root/ /
