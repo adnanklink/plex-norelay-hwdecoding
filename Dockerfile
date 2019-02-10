@@ -1,5 +1,9 @@
 FROM plexinc/pms-docker
 
+# env
+ENV NVIDIA_DRIVER_CAPABILITIES="compute,video,utility"
+ENV NVIDIA_VISIBLE_DEVICES="all"
+
 # add script to remove plex relay
 COPY root/ /
 
