@@ -1,14 +1,19 @@
 # arg
-ARG BRANCH
-ARG COMMIT
-ARG TAG
+ARG BRANCH=
+ARG COMMIT=
+ARG TAG=
 
 # image
 FROM plexinc/pms-docker:${TAG:-latest}
 
 # env
-ENV NVIDIA_DRIVER_CAPABILITIES="compute,video,utility"
-ENV NVIDIA_VISIBLE_DEVICES="all"
+ENV \
+	BRANCH=${BRANCH} \
+	COMMIT=${COMMIT} \
+	TAG=${TAG} \
+	NVIDIA_DRIVER_CAPABILITIES="compute,video,utility" \
+	NVIDIA_VISIBLE_DEVICES="all"
+	
 
 # output
 RUN \
