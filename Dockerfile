@@ -1,6 +1,6 @@
 FROM linuxserver/plex
 
-# add script to remove plex relay
+# add scripts to modify plex binaries 
 COPY root/ /
 
 # ports and volumes
