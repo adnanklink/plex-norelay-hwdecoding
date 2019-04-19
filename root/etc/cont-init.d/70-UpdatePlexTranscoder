@@ -11,7 +11,7 @@ if (( FILESIZE < MAXSIZE )); then
   echo "Already nvdec patched!"
 else
   mv /usr/lib/plexmediaserver/Plex\ Transcoder /usr/lib/plexmediaserver/Plex\ Transcoder2
-  mv /etc/new-transcoder.sh /usr/lib/plexmediaserver/Plex\ Transcoder
+  cp /etc/new-transcoder.sh /usr/lib/plexmediaserver/Plex\ Transcoder
   chmod 755 /usr/lib/plexmediaserver/Plex\ Transcoder
   chmod u+x /usr/lib/plexmediaserver/Plex\ Transcoder
 fi
